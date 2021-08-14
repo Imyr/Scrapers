@@ -179,8 +179,7 @@ if not mpd_url:
                         "-map", "0",
                         "-map", "1",
                         "-c", "copy",
-                        "-c:s", "srt",
-                        f'{ID}.mp4']
+                        f'{ID}.mkv']
     else:
         ffmpeg_command = ["ffmpeg",
                         "-i", f"{ID}-strm.ts", 
@@ -274,8 +273,7 @@ else:
                         "-map", "1",
                         "-map", "2", 
                         "-c", "copy",
-                        "-c:s", "srt",
-                        f'{ID}.mp4']
+                        f'{ID}.mkv']
     else:
         ffmpeg_command = ["ffmpeg",
                         "-i", f"{ID}-vid.m4s",
@@ -283,6 +281,6 @@ else:
                         "-map", "0",
                         "-map", "1", 
                         "-c", "copy",
-                        f'{ID}.mp4']
+                        f'{ID}.mkv']
 
     subprocess.run(ffmpeg_command)
