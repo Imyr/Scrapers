@@ -117,7 +117,7 @@ if not mpd_url:
     print(bs(m3u8, "html.parser").prettify())
     stream_ids = []
     for i in m3u8.split('\n'):
-        if "http" in i:
+        if ".m3u8" in i:
             stream_ids.append(i.replace(playlist_base, ""))
 
     if AUTO_MODE:
@@ -131,7 +131,7 @@ if not mpd_url:
     
     segment_ids = []
     for i in index.split('\n'):
-        if "http" in i:
+        if ".ts" in i:
             segment_ids.append(i.replace(playlist_base, ""))
 
     with open(f"{ID}.ts", "wb") as strm:
